@@ -1,22 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Works from '../views/Works.vue'
 
 Vue.use(VueRouter)
-
+const About = () => {
+  return import(/* webpackChunkName: "about" */ '../views/About.vue')
+  // webpackChunkName : 링크값이 입력됐을 때 이 값에 해당하는 컴포넌트 내용만을 불러오겠다.
+}
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Works',
+    component: Works
   },
   {
-    path: '/about',
+    path: '/About',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: About
+  },
+  {
+    path: '/Careers',
+    name: 'Careers',
+    component: () => import(/* webpackChunkName: "Careers" */ '../views/Careers.vue')
   }
 ]
 
