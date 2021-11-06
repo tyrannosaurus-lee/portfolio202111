@@ -15,9 +15,9 @@
               <div class="visual-con">
                 <div class="visual1"></div>
                 <div class="visual2">
-                  <img src="~@/assets/img/works/bg01.jpg" alt="">
+                  <img src="~@/assets/img/works/bg01.jpg" alt="헤이뉴스">
                 </div>
-                <div class="visual3"></div>
+                <div class="visual3">Hey.News</div>
               </div>
             </div>
             <div class="project-detail">project-detail1</div>
@@ -27,38 +27,169 @@
               <div class="visual-con">
                 <div class="visual1"></div>
                 <div class="visual2">
-                  <img src="~@/assets/img/works/bg02.jpg" alt="">
+                  <img src="~@/assets/img/works/bg02.jpg" alt="JTBC 뉴스앱 웹뷰">
                 </div>
-                <div class="visual3"></div>
+                <div class="visual3">JTBC NEWS App</div>
               </div>
             </div>
-            <div class="project-detail">project-detail1</div>
+            <div class="project-detail">project-detail2</div>
           </swiper-slide>
           <swiper-slide class="slide-3">
             <div class="project-tit">
               <div class="visual-con">
                 <div class="visual1"></div>
                 <div class="visual2">
-                  <img src="~@/assets/img/works/bg03.jpg" alt="">
+                  <img src="~@/assets/img/works/bg03.jpg" alt="날씨가 좋으면 찾아가겠어요">
                 </div>
-                <div class="visual3"></div>
+                <div class="visual3">When The Weather Is Fine</div>
               </div>
             </div>
-            <div class="project-detail">project-detail1</div>
+            <div class="project-detail">project-detail3</div>
           </swiper-slide>
           <swiper-slide class="slide-4">
             <div class="project-tit">
               <div class="visual-con">
                 <div class="visual1"></div>
                 <div class="visual2">
-                  <img src="~@/assets/img/works/bg04.jpg" alt="">
+                  <img src="~@/assets/img/works/bg04.jpg" alt="골든디스크">
+                </div>
+                <div class="visual3">Golden Disc Awards</div>
+              </div>
+            </div>
+            <div class="project-detail">project-detail4</div>
+          </swiper-slide>
+          <swiper-slide class="slide-5">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg05.jpg" alt="백상 예술대상">
                 </div>
                 <div class="visual3"></div>
               </div>
             </div>
-            <div class="project-detail">project-detail1</div>
+            <div class="project-detail">Baeksang Arts Awards</div>
           </swiper-slide>
-          <swiper-slide class="slide-5"></swiper-slide>
+          <swiper-slide class="slide-6">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg06.jpg" alt="5주년 이벤트">
+                </div>
+                <div class="visual3"></div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-7">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg07.jpg" alt="아는형님 200회 출석 체크 이벤트">
+                </div>
+                <div class="visual3"></div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-8">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg08.jpg" alt="뷰티인사이드 바뀐그림찾기">
+                </div>
+                <div class="visual3">Beauty Inside 바뀐그림찾기</div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-9">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg09.jpg" alt="JTBC2">
+                </div>
+                <div class="visual3">JTBC2</div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-10">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg10.jpg" alt="히든싱어 레전드 편 투표">
+                </div>
+                <div class="visual3"></div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-11">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg11.jpg" alt="중앙패밀리포인트">
+                </div>
+                <div class="visual3"></div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-12">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg12.jpg" alt="일단 뜨겁게 청소하라">
+                </div>
+                <div class="visual3"></div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-13">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg13.jpg" alt="JTBC Now Promotion">
+                </div>
+                <div class="visual3">JTBC Now Promotion</div>
+              </div>
+            </div>
+            <div class="project-detail">Baeksang Arts Awards</div>
+          </swiper-slide>
+          <swiper-slide class="slide-14">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg13.jpg" alt="JTBC Worldwide">
+                </div>
+                <div class="visual3">JTBC Worldwide</div>
+              </div>
+            </div>
+            <div class="project-detail">JTBC Worldwide</div>
+          </swiper-slide>
+          <swiper-slide class="slide-15">
+            <div class="project-tit">
+              <div class="visual-con">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img src="~@/assets/img/works/bg15.jpg" alt="JTBC 믹스나인">
+                </div>
+                <div class="visual3">JTBC Mixnine vote</div>
+              </div>
+            </div>
+            <div class="project-detail">JTBC Mixnine vote</div>
+          </swiper-slide>
           <!-- <div class="swiper-pagination" slot="pagination"></div> -->
         </swiper>
         <!-- <div class="pagination-bg"></div> -->
@@ -68,6 +199,16 @@
           <swiper-slide class="slide-3"></swiper-slide>
           <swiper-slide class="slide-4"></swiper-slide>
           <swiper-slide class="slide-5"></swiper-slide>
+          <swiper-slide class="slide-6"></swiper-slide>
+          <swiper-slide class="slide-7"></swiper-slide>
+          <swiper-slide class="slide-8"></swiper-slide>
+          <swiper-slide class="slide-9"></swiper-slide>
+          <swiper-slide class="slide-10"></swiper-slide>
+          <swiper-slide class="slide-11"></swiper-slide>
+          <swiper-slide class="slide-12"></swiper-slide>
+          <swiper-slide class="slide-13"></swiper-slide>
+          <swiper-slide class="slide-14"></swiper-slide>
+          <swiper-slide class="slide-15"></swiper-slide>
         </swiper>
       </div>
     </div>
@@ -80,8 +221,9 @@
     display:flex; align-items:center; padding:124px 6vw 219px;
   }
   .eunhye-logo {width:28vw; z-index:9999;}
-  .eunhye-logo img {display:block; width:100%;}
+  .eunhye-logo img {display:block; width:70%;}
   .swiper-container {overflow:visible;}
+  .swiper-slide {background:#fff;}
   /* 상단 슬라이드 */
   .gallery-top {
     width:56vw;
@@ -90,12 +232,13 @@
       .visual-con {
         position:absolute; top:0; right:0; bottom:0; left:0;
         padding:2vw; height:100%;
-        .visual1 {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%;}
+        .visual1 {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%; opacity:0;}
         .visual2 {
           position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%;
-          transform:rotate(10deg);
+          transform:rotate(10deg); opacity:0;
           img {width:100%;}
         }
+        .visual3 {font-weight:700;}
       }
     }
     .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
@@ -111,15 +254,31 @@
     .slide-11 .visual1 {background-color:rgb(239, 132, 145);}
     .slide-12 .visual1 {background-color:rgb(239, 132, 145);}
     .slide-13 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-14 .visual1 {background-color:rgb(204, 204, 204);}
+    .slide-15 .visual1 {background-color:rgb(249, 205, 22);}
     .swiper-slide-active {
-      div.visual2 {
-        // &.slide-up-leave-active {
-        //   transition:transform .5s cubic-bezier(.55,.055,.675,.19);
-        // }
-        transform:scale(.8) rotate(-20deg) translateY(-100vh);
+      .visual-con {
+        .visual1,
+        div.visual2 { opacity:1;}
       }
     }
-    .visual3 {position:relative; height:100%; background:#fff;}
+    .swiper-slide-prev {
+      .visual-con {
+        div.visual2 {
+          transition:transform .5s cubic-bezier(.55,.055,.675,.19);
+          transform:scale(.8) rotate(-20deg) translateY(-100vh); opacity:1;
+        }
+      }
+    }
+    .visual3 {
+      position:relative; height:100%;
+      background:#fff;
+      display:flex; justify-content: space-around; align-items: center;
+      span {
+        position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%;
+
+      }
+    }
   }
 
   /* 하단 섬네일 슬라이드 */
@@ -147,7 +306,34 @@
         background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/JiVBlurI1tR5VJey1p0st/619d6aaddd8161b8c1937a181c277f03/icon_akewaka.svg');
       }
       &.slide-5 {
+        background-image:url('~@/assets/img/works/works_icon05.png');
+      }
+      &.slide-6 {
+        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/70ZExw3p6Ex3mnllvqi5dI/d7ed50be73f8b1e90137ef4bde55543f/icon_gmb.svg');
+      }
+      &.slide-7 {
+        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/7dbe9pIaCBw7xeyKT9UBHK/b20f1d6baa6a8e5262da045353536330/icon_abc.svg');
+      }
+      &.slide-8 {
+        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5TT5Zse3x5p7kOv9sCuzVA/a00fddcc4649ab933128a792a2381ea4/icon_alu.svg');
+      }
+      &.slide-9 {
         background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg');
+      }
+      &.slide-10 {
+        background-image:url('');
+      }
+      &.slide-11 {
+        background-image:url('');
+      }
+      &.slide-12 {
+        background-image:url('~@/assets/img/works/works_icon12.png');
+      }
+      &.slide-14 {
+        background-image:url('~@/assets/img/works/works_icon14.png');
+      }
+      &.slide-15 {
+        background-image:url('~@/assets/img/works/works_icon15.png');
       }
     }
     &.gallery-top {
@@ -190,7 +376,7 @@ export default {
         spaceBetween: 10,
         effect: 'fade',
         lazy: true,
-        speed: 5000,
+        speed: 2000,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -201,10 +387,10 @@ export default {
         loopedSlides: 8,
         spaceBetween: 10,
         centeredSlides: true,
-        slidesPerView: 'auto',
+        slidesPerView: 10,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        speed: 5000,
+        speed: 2000,
       }
     }
   },
