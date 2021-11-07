@@ -5,211 +5,55 @@
         <div class="eunhye-logo">
           <img src="~@/assets/img/common/logo_eunhye.png" alt="">
         </div>
+        <div class="select-icon">
+          <p>Please select icon</p>
+        </div>
+        <!-- 상단 갤러리 -->
         <swiper
           class="swiper gallery-top"
           :options="swiperOptionTop"
           ref="swiperTop"
         >
-          <swiper-slide class="slide-1">
+          <swiper-slide 
+            v-for="(item, index) in list"
+            :key="index"
+            :class="`slide-${index + 1}`"
+          >
             <div class="project-tit">
               <div class="visual-con">
                 <div class="visual1"></div>
                 <div class="visual2">
-                  <img src="~@/assets/img/works/bg01.jpg" alt="헤이뉴스">
+                  <img :src="`${item.image}`" alt="">
                 </div>
-                <div class="visual3">Hey.News</div>
+                <div class="visual3">
+                  <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
+                </div>
+              </div>
+              <div class="project-detail">
+                <div class="slider-counter">
+                  <span class="label">No.</span>
+                  <span class="now">{{index + 1}}</span>
+                  <span class="all">{{list.length}}</span>
+                </div>
+                <div class="project-name">{{item.name}}</div>
+                <div class="project-info">{{item.period}}{{item.device}}</div>
+                <div class="project-shortcut">
+                  <a :href="`${item.url}`" target="_blank">View detail</a>
+                </div>
               </div>
             </div>
-            <div class="project-detail">project-detail1</div>
           </swiper-slide>
-          <swiper-slide class="slide-2">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg02.jpg" alt="JTBC 뉴스앱 웹뷰">
-                </div>
-                <div class="visual3">JTBC NEWS App</div>
-              </div>
-            </div>
-            <div class="project-detail">project-detail2</div>
-          </swiper-slide>
-          <swiper-slide class="slide-3">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg03.jpg" alt="날씨가 좋으면 찾아가겠어요">
-                </div>
-                <div class="visual3">When The Weather Is Fine</div>
-              </div>
-            </div>
-            <div class="project-detail">project-detail3</div>
-          </swiper-slide>
-          <swiper-slide class="slide-4">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg04.jpg" alt="골든디스크">
-                </div>
-                <div class="visual3">Golden Disc Awards</div>
-              </div>
-            </div>
-            <div class="project-detail">project-detail4</div>
-          </swiper-slide>
-          <swiper-slide class="slide-5">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg05.jpg" alt="백상 예술대상">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-6">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg06.jpg" alt="5주년 이벤트">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-7">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg07.jpg" alt="아는형님 200회 출석 체크 이벤트">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-8">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg08.jpg" alt="뷰티인사이드 바뀐그림찾기">
-                </div>
-                <div class="visual3">Beauty Inside 바뀐그림찾기</div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-9">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg09.jpg" alt="JTBC2">
-                </div>
-                <div class="visual3">JTBC2</div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-10">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg10.jpg" alt="히든싱어 레전드 편 투표">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-11">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg11.jpg" alt="중앙패밀리포인트">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-12">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg12.jpg" alt="일단 뜨겁게 청소하라">
-                </div>
-                <div class="visual3"></div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-13">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg13.jpg" alt="JTBC Now Promotion">
-                </div>
-                <div class="visual3">JTBC Now Promotion</div>
-              </div>
-            </div>
-            <div class="project-detail">Baeksang Arts Awards</div>
-          </swiper-slide>
-          <swiper-slide class="slide-14">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg13.jpg" alt="JTBC Worldwide">
-                </div>
-                <div class="visual3">JTBC Worldwide</div>
-              </div>
-            </div>
-            <div class="project-detail">JTBC Worldwide</div>
-          </swiper-slide>
-          <swiper-slide class="slide-15">
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img src="~@/assets/img/works/bg15.jpg" alt="JTBC 믹스나인">
-                </div>
-                <div class="visual3">JTBC Mixnine vote</div>
-              </div>
-            </div>
-            <div class="project-detail">JTBC Mixnine vote</div>
-          </swiper-slide>
-          <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-        </swiper>
-        <!-- <div class="pagination-bg"></div> -->
+        </swiper> 
+        <!-- //상단 갤러리 -->
+        <!-- 하단 아이콘 -->
         <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-          <swiper-slide class="slide-1"></swiper-slide>
-          <swiper-slide class="slide-2"></swiper-slide>
-          <swiper-slide class="slide-3"></swiper-slide>
-          <swiper-slide class="slide-4"></swiper-slide>
-          <swiper-slide class="slide-5"></swiper-slide>
-          <swiper-slide class="slide-6"></swiper-slide>
-          <swiper-slide class="slide-7"></swiper-slide>
-          <swiper-slide class="slide-8"></swiper-slide>
-          <swiper-slide class="slide-9"></swiper-slide>
-          <swiper-slide class="slide-10"></swiper-slide>
-          <swiper-slide class="slide-11"></swiper-slide>
-          <swiper-slide class="slide-12"></swiper-slide>
-          <swiper-slide class="slide-13"></swiper-slide>
-          <swiper-slide class="slide-14"></swiper-slide>
-          <swiper-slide class="slide-15"></swiper-slide>
+          <swiper-slide 
+            v-for="(item, index) in list"
+            :key="index"
+            :class="`slide-${index + 1}`"
+          ></swiper-slide>
         </swiper>
+        <!-- //하단 아이콘 -->
       </div>
     </div>
   </div>
@@ -228,17 +72,21 @@
   .gallery-top {
     width:56vw;
     .project-tit {
-      position:relative; width:28vw; height:42vw; max-height:100%;
+      position:relative; width:56vw; height:42vw; max-height:100%;
       .visual-con {
-        position:absolute; top:0; right:0; bottom:0; left:0;
-        padding:2vw; height:100%;
+        position:absolute; top:0; bottom:0; left:0;
+        padding:2vw; width:28vw; height:100%;
         .visual1 {position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%; opacity:0;}
         .visual2 {
           position:absolute; top:0; right:0; bottom:0; left:0; width:100%; height:100%;
           transform:rotate(10deg); opacity:0;
           img {width:100%;}
         }
-        .visual3 {font-weight:700;}
+        .visual3 {font-size:4vw; line-height:normal; font-weight:700;}
+      }
+      .project-detail {
+        position:absolute; top:0; right:0; bottom:0; 
+        width:28vw; height:42vw; max-height:100%;
       }
     }
     .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
@@ -376,7 +224,7 @@ export default {
         spaceBetween: 10,
         effect: 'fade',
         lazy: true,
-        speed: 2000,
+        speed: 1000,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -390,8 +238,122 @@ export default {
         slidesPerView: 10,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        speed: 2000,
-      }
+        speed: 1000,
+      },
+      list: [
+        {
+            id: 1, 
+            name: 'HeyNews', 
+            device: 'Responsive Web', 
+            period: '2020.5 ~ 2020.10',
+            image: require('@/assets/img/works/bg01.jpg'),
+            url: 'https://hey.news.co.kr'
+        },
+        {
+            id: 2, 
+            name: 'JTBC New App', 
+            device: 'APP (web view)', 
+            period: '2020.8 ~ 2020.10',
+            image: require('@/assets/img/works/bg02.jpg'),
+            url: 'https://play.google.com/store/apps/details?id=com.jtbc.news&hl=ko'
+        },
+        {
+            id: 3, 
+            name: '날씨가좋으면 찾아가겠어요', 
+            device: 'Responsive Web', 
+            period: '2020.02',
+            image: require('@/assets/img/works/bg03.jpg'),
+            url: 'http://eunhye106.cafe24.com/event/weather/event.html'
+        },
+        {
+            id: 4, 
+            name: 'Golden Disc', 
+            device: 'pc, mobile web', 
+            period: '2019.12',
+            image: require('@/assets/img/works/bg04.jpg'),
+            url: 'http://www.goldendisc.co.kr/kr/'
+        },
+        {
+            id: 5, 
+            name: '백상예술대상', 
+            device: 'pc, mobile web', 
+            period: '2019. 04',
+            image: require('@/assets/img/works/bg05.jpg'),
+            url: 'https://www.baeksangawards.co.kr/'
+        },
+        {
+            id: 6, 
+            name: 'JTBC 5th Event', 
+            device: 'pc, mobile web', 
+            period: '2021.05',
+            image: require('@/assets/img/works/bg06.jpg'),
+            url: 'http://eunhye106.cafe24.com/jtbc_5th/'
+        },
+        {
+            id: 7, 
+            name: 'JTBC 아는형님 200회 출석 체크 이벤트', 
+            device: 'pc, mobile web', 
+            period: '2022.05',
+            image: require('@/assets/img/works/bg07.jpg'),
+            url: 'http://eunhye106.cafe24.com/event/knowingbrother/brother_mv_event.html'
+        },{
+            id: 8, 
+            name: 'JTBC beautyinside 바뀐그림찾기', 
+            device: 'pc, mobile web', 
+            period: '2023.05',
+            image: require('@/assets/img/works/bg08.jpg'),
+            url: 'http://eunhye106.cafe24.com/event/beautyinside/beautyinside_event.html'
+        },{
+            id: 9, 
+            name: 'JTBC2', 
+            device: 'pc, mobile web', 
+            period: '2024.05',
+            image: require('@/assets/img/works/bg09.jpg'),
+            url: 'https://jtbc2.joins.com/'
+        },{
+            id: 10, 
+            name: 'JTBC 히든싱어 레전드 편 투표', 
+            device: 'pc, mobile web', 
+            period: '2025.05',
+            image: require('@/assets/img/works/bg10.jpg'),
+            url: 'http://eunhye106.cafe24.com/event/hiddensinger5/legend_event.html'
+        },{
+            id: 11, 
+            name: '중앙패밀리포인트', 
+            device: 'pc, mobile web', 
+            period: '',
+            image: require('@/assets/img/works/bg11.jpg'),
+            url: 'https://eunhye106.cafe24.com/family_point/family_point01.html'
+        },{
+            id: 12, 
+            name: 'JTBC 일단 뜨겁게 청소하라', 
+            device: 'pc, mobile web', 
+            period: '',
+            image: require('@/assets/img/works/bg12.jpg'),
+            url: 'http://eunhye106.cafe24.com/event/hotclean/event.html'
+        },{
+            id: 13, 
+            name: 'JTBC Now Promotion', 
+            device: 'pc, mobile web', 
+            period: '',
+            image: require('@/assets/img/works/bg13.jpg'),
+            url: 'http://eunhye106.cafe24.com/jtbc_now/jtbc_now3.htmlㄴ'
+        },{
+            id: 14, 
+            name: 'JTBC worldwide', 
+            device: 'pc, mobile web', 
+            period: '',
+            image: require('@/assets/img/works/bg14.jpg'),
+            url: 'http://www.jtbcworldwide.com'
+        },{
+            id: 15, 
+            name: 'JTBC Mixnine vote', 
+            device: 'pc, mobile web', 
+            period: '',
+            image: require('@/assets/img/works/bg15.jpg'),
+            url: 'http://eunhye106.cafe24.com/mixnine/index.html'
+        }
+      ],
     }
   },
   mounted() {
