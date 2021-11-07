@@ -102,8 +102,9 @@
           .visual3 {
             position:relative; height:100%;
             font-size:3vw; line-height:normal; font-weight:700;
-            background:#fff;
+            background:#ececec;
             display:flex; justify-content: space-around; align-items: center;
+            // box-shadow:44px 44px 66px rgb(0 0 0 / 20%);
             a {color:#000;}
           }
         }
@@ -300,7 +301,27 @@
       opacity: 1;
     }
   }
-
+@media (max-width: 750px) {
+  #nav {top:70px;}
+  .eunhye-logo {position:fixed; top:5px; left:-6px; width:200px;}
+  .transition-container {width:100%;}
+  .project-detail {display: none;}
+  .gallery-top {
+    .swiper-slide {
+      height:100%;
+      .visual-con {
+        width:100%;
+        .visual-area {
+          width:80%; max-width: unset;
+          .visual3 {
+            font-size:8vw;
+            // box-shadow:30px 30px 44px rgb(0 0 0 / 20%);
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 // https://github.surmon.me/vue-awesome-swiper/
