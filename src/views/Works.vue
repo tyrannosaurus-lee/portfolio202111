@@ -81,7 +81,7 @@
     animation-name: navigation;
   }
   .swiper-container {overflow:visible;}
-  .swiper-slide {background:#fff;}
+  .swiper-slide {background:#ececec;}
   .gallery-top {
     /* width:56vw; */height:100%;
     .swiper-slide {
