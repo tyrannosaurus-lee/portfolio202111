@@ -35,7 +35,10 @@
                   <span class="all">{{list.length}}</span>
                 </div>
                 <div class="project-name"><p>{{item.name}}</p></div>
-                <div class="project-info">{{item.period}}{{item.device}}</div>
+                <div class="project-info">
+                  <span class="period">{{item.period}}</span>
+                  <span class="device">{{item.device}}</span>
+                </div>
                 <div class="project-shortcut">
                   <a :href="`${item.url}`" target="_blank">View detail</a>
                 </div>
@@ -89,7 +92,7 @@
       .project-tit {height:100%;}
       // 상단 비주얼 좌측
       .visual-con {
-        /* position:absolute; */ position:relative; top:0; bottom:0; left:0;
+        /* position:absolute; */ position:relative; float:left;
         width:50%; height:100%;
         .visual-area {
           position:relative;margin:0 auto;padding:2vw; max-width:370px; height:100%;
@@ -113,8 +116,9 @@
 
       // 상단 비주얼 우측
       .project-detail {
-        position:absolute; top:0; right:0; bottom:0;
-        /* width:28vw; */width:50%; /* height:42vw; */ max-height:100%;
+        position:relative; float:right;
+        display:flex; height:100%; -webkit-box-pack:end; justify-content:flex-end; flex-direction:column; justify-content:center;
+        width:50%; max-height:100%;
         .slider-counter {
           overflow:hidden; display:flex; -webkit-box-pack:end; justify-content:flex-end; font-size:10px;font-weight:600;
           .label {margin-right:6px;}
@@ -126,12 +130,29 @@
         }
         .project-name {
           overflow:hidden; display:flex; -webkit-box-align:center; align-items:center; justify-content:right; height:10.2vw;
-          font-weight:400; font-size:3vw; line-height:1; letter-spacing:-1px;
+          font-weight:400; font-size:3vw; line-height:1; letter-spacing:-1px; color:#000;
           transform-origin: center right;
         }
-        .project-info {}
+        .project-info {
+          font-size:10px; font-weight:400; color:#6b6b6b; text-align:right;
+          .period {position:relative; padding-right:15px;}
+          .period:after {position:absolute; right:0; top:0; bottom:0; content:" ・ ";}
+          .device {}
+        }
         .project-shortcut {
-          a {}
+          padding-top:30px; text-align:right;
+          a {
+            position:relative; font-size:13px; font-weight:400; color:rgba(0,0,0,.59);
+          }
+          &:hover a:after {
+            position:absolute; content:" "; bottom:-5px; right:0; left:0;
+            display:block; height:1px; background-color:rgba(0,0,0,.59);
+            animation: view-detail .5s
+          }
+          @keyframes view-detail {
+            from { width: 0 }
+            to   { width: 100% }
+          }
         }
       }
       // //상단 비주얼 우측
@@ -161,9 +182,11 @@
     // 이전 슬라이드
     .swiper-slide-prev {
       .visual-con {
-        div.visual2 {
-          transition:transform .5s cubic-bezier(.55,.055,.675,.19);
-          transform:scale(.8) rotate(-20deg) translateY(-130vh); opacity:1;
+        .visual-area {
+          div.visual2 {
+            transition:transform .5s cubic-bezier(.55,.055,.675,.19);
+            transform:scale(.8) rotate(-20deg) translateY(-130vh); opacity:1;
+          }
         }
       }
       .project-detail {
@@ -186,9 +209,11 @@
     // 다음 슬라이드
     .swiper-slide-next {
       .visual-con {
-        div.visual2 {
-          transition:transform .5s cubic-bezier(.55,.055,.675,.19);
-          transform:scale(.8) rotate(-20deg) translateY(-100vh); opacity:1;
+        .visual-area {
+          div.visual2 {
+            transition:transform .5s cubic-bezier(.55,.055,.675,.19);
+            transform:scale(.8) rotate(-20deg) translateY(-100vh); opacity:1;
+          }
         }
       }
       .project-detail {
@@ -305,7 +330,7 @@
   #nav {top:70px;}
   .eunhye-logo {position:fixed; top:5px; left:-6px; width:200px;}
   .transition-container {width:100%;}
-  .project-detail {display: none;}
+
   .gallery-top {
     .swiper-slide {
       height:100%;
@@ -319,6 +344,7 @@
           }
         }
       }
+      .project-detail {display: none;}
     }
   }
 }
