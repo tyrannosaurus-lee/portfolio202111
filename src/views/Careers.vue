@@ -3,68 +3,27 @@
     <h2>Careers</h2>
     <div class="careers-container">
       <div class="accordion-con">
-        <div class="accordion-area">
-          <div 
+        <div
+          class="accordion-area"
+          v-for="(item, index) in list"
+          @click="openItem(item)"
+          v-bind:key="index"
+        >
+          <div
             class="accordion-tit"
-            v-on:click="accordion"
+            :class="{'active' : item.isActive}"
           >
             <div class="career-drawer_trigger">
               <div class="career-drawer_line1"></div>
               <div class="career-drawer_line2"></div>
             </div>
-            JTBC &amp; JTBC STUDIOS
+            {{item.title}}
           </div>
-          <div class="accordion-text">
-            JTBC(pc, mobile web), JTBC2, JTBC4, JTBC mediacomm, JTBC news (pc, mobile web, app:web view)
-            Hey News, JTBC 5th, Mixnine vote, JTBC NOW promotion, JoongAng Group Family Point, JTBC2, JTBC news app newshome, Baeksangawards, Goldendisc
-          </div>
-        </div>
-        <div class="accordion-area">
-          <div 
-            class="accordion-tit"
-            @click="accordion"
+          <div
+            class="accordion-text"
+            v-on:enter="enter" v-on:leave="leave"
           >
-            <div class="career-drawer_trigger">
-              <div class="career-drawer_line1"></div>
-              <div class="career-drawer_line2"></div>
-            </div>
-            Hey Korean
-          </div>
-          <div class="accordion-text">
-            Single to Mingle (web &amp; mobile web), HeyKorean
-            HeyKorean customer service center(flexible site) 
-          </div>
-        </div>
-        <div class="accordion-area">
-          <div 
-            class="accordion-tit"
-            @click="accordion"
-          >
-            <div class="career-drawer_trigger">
-              <div class="career-drawer_line1"></div>
-              <div class="career-drawer_line2"></div>
-            </div>
-            Waplez
-          </div>
-          <div class="accordion-text">
-            hyunjinst, blueTech Solution, bolak, SoongSil University Artificial Interlligence Laboratory, 
-            Standardmedia, CBNU IUCF, Hizen, E-journal, Danielprayer, ShinaTNC, Ahnsanggyu Honey 
-          </div>
-        </div>
-        <div class="accordion-area">
-          <div 
-            class="accordion-tit"
-            @click="accordion"
-          >
-            <div class="career-drawer_trigger">
-              <div class="career-drawer_line1"></div>
-              <div class="career-drawer_line2"></div>
-            </div>
-            Cornerstone Interactive
-          </div>
-          <div class="accordion-text">
-            T’station, ksNet, Pizzahut, Jaseng Hospital of Korean Medicine, UL Korea, Woori Asset Management, Samsung Yepp 
-            SogangLIfeCare, Biofood 
+            {{item.content}}
           </div>
         </div>
       </div>
@@ -73,15 +32,15 @@
 </template>
 <style lang="scss">
   .Careers {
-    position:relative; margin:0 auto; padding:14vh 14% 0; max-width:calc(1240px + 28%);
+    position:relative; margin:0 auto; padding:14vh 14% 250px; max-width:calc(1240px + 28%); background-color:#ececec;
     h2 {position:absolute; top:14vh; left:60px; font-size:16px; font-weight:600;}
-    .careers-container {text-align:left;}
+    .careers-container {text-align:left; }
   }
   .accordion-area {
-    position:relative; 
+    position:relative;
+    border-top:1px solid rgba(0,0,0,.2);
     .accordion-tit {
-      padding:50px 0 50px 55px; font-size:24px;
-      border-top:1px solid rgba(0,0,0,.2); border-bottom:1px solid rgba(0,0,0,.2);
+      padding:50px 30px 50px 55px; font-size:24px; line-height:36px;
       cursor:pointer;
       .career-drawer_trigger {
         position:absolute; top:60px; left:15px; width:16px; height:16px;
@@ -91,46 +50,82 @@
           background-color: #000;
         }
         .career-drawer_line1 {}
-        .career-drawer_line2 {}
+        .career-drawer_line2 {
+          transition: transform .5s,opacity .5s;
+          transform:rotate(90deg);
+        }
+      }
+      & + .accordion-text {
+        overflow:hidden;  padding:0 55px; height:0;
+        font-size:14px; line-height:18px;
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
       }
       &.active + .accordion-text {
-        display:block;
+        padding:30px 55px 60px; height:auto;
+
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+      }
+      &.active {
+        .career-drawer_line2 {transform:rotate(0deg) scaleX(0); opacity:0;}
       }
     }
-    .accordion-text {display:none;}
+  &:last-child {border-bottom:1px solid rgba(0,0,0,.2);}
   }
 
 </style>
 <script>
 export default {
   name: 'Careers',
-  // computed: {
-  //   accordion(){
-  //     const accordionTitle = document.querySelectorAll('.accordion-tit');// eslint-disable-line no-unused-vars
-  //   }
-  // },
+  data() {
+    return {
+      list: [
+        {
+          id: 1,
+          title:'JTBC & JTBC STUDIOS',
+          content: 'JTBC(pc, mobile web), JTBC2, JTBC4, JTBC mediacomm, JTBC news (pc, mobile web, app:web view), Hey News, JTBC 5th, Mixnine vote, JTBC NOW promotion, JoongAng Group Family Point, JTBC2, JTBC news app newshome, Baeksangawards, Goldendisc',
+          isActive: false
+        },{
+          id: 2,
+          title:'Hey Korean',
+          content: 'Single to Mingle (web &amp; mobile web), HeyKorean, HeyKorean customer service center(flexible site)',
+          isActive: false
+        },{
+          id: 3,
+          title:'Waplez',
+          content: 'hyunjinst, blueTech Solution, bolak, SoongSil University Artificial Interlligence Laboratory, Standardmedia, CBNU IUCF, Hizen, E-journal, Danielprayer, ShinaTNC, Ahnsanggyu Honey',
+          isActive: false
+        },{
+          id: 4,
+          title:'Cornerstone Interactive',
+          content: 'T’station, ksNet, Pizzahut, Jaseng Hospital of Korean Medicine, UL Korea, Woori Asset Management, Samsung Yepp, SogangLIfeCare, Biofood',
+          isActive: false
+        }
+      ]
+    }
+  },
   methods: {
-    accordion(){
-      console.log(1);
-      const accordionTitle = document.querySelectorAll('.accordion-tit');// eslint-disable-line no-unused-vars
-      this.accordionTitle.classList.toggle('active');
-      // https://codepen.io/xxdd13/pen/qKqNxo
-      // https://codepen.io/enolic/pen/rrvyqK
-      // for(let j=0; j<accordionTitle.length; j++){
-        // accordionTitle.classList.remove('active');
-        // accordionTitle[j].addEventListener('click', function(){
-        //   this.classList.remove('active');
-        // })
-      // }
-      for(let i=0; i<accordionTitle.length; i++){
-        // if(accordionTitle.classList.contains('activen')){
-        //   accordionTitle.classList.remove('active');
-        // }
-        // accordionTitle[i].addEventListener('click', function(){
-        //   this.classList.toggle('active');
-        // })
+    openItem(item){
+      item.isActive =! item.isActive
+    },
+    setClass(item){
+      if (item.isActive == true ) {
+        return 'active'
       }
-      
+      return
+    },
+    enter(){
+      const accordionText = document.querySelectorAll('.accordion-text');// eslint-disable-line no-unused-vars
+      accordionText.style.height = "auto"
+    },
+    leave(){
+      const accordionText = document.querySelectorAll('.accordion-text');// eslint-disable-line no-unused-vars
+      let height = accordionText.clientHeight + "px" // eslint-disable-line no-unused-vars
+      accordionText.style.height = "0px"
+      setTimeout(() => {
+          accordionText.style.height = height
+      }, 0)
     }
   }
 }
