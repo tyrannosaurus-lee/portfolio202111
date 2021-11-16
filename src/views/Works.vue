@@ -12,8 +12,8 @@
           ref="swiperTop"
         >
           <swiper-slide
-            v-for="(item, index) in list"
-            :key="index"
+            v-for="(item, key, index) in list"
+            :key="item.id"
             :class="`slide-${index + 1}`"
           >
             <div class="project-tit">
@@ -51,7 +51,7 @@
         <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
           <swiper-slide
             v-for="(item, index) in list"
-            :key="index"
+            :key="item.id"
             :class="`slide-${index + 1}`"
           ></swiper-slide>
         </swiper>
