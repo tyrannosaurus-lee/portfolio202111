@@ -6,6 +6,40 @@
       </div>
       <div class="transition-container">
         <!-- 상단 갤러리 -->
+        <div class="gallery-top">
+          <div 
+            v-for="(item, index) in list"
+            :key="item.id"
+            :class="`project-tit slide-${index}`"
+          >
+            <div class="visual-con">
+              <div class="visual-area">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img :src="`${item.image}`" alt="">
+                </div>
+                <div class="visual3">
+                  <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-detail">
+              <div class="slider-counter">
+                <span class="label">No.</span>
+                <span class="now">{{index + 1}}</span>
+                <span class="all">{{list.length}}</span>
+              </div>
+              <div class="project-name"><p>{{item.name}}</p></div>
+              <div class="project-info">
+                <span class="period">{{item.period}}</span>
+                <span class="device">{{item.device}}</span>
+              </div>
+              <div class="project-shortcut">
+                <a :href="`${item.url}`" target="_blank">View detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- <swiper
           class="swiper gallery-top"
           :options="swiperOptionTop"
@@ -45,28 +79,15 @@
               </div>
             </div>
           </swiper-slide>
-<<<<<<< HEAD
-        </swiper>
-        <!-- //상단 갤러리 -->
-        <!-- 하단 아이콘 -->
-        <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-          <swiper-slide
-            v-for="(item, index) in list"
-            :key="item.id"
-            :class="`slide-${index + 1}`"
-          ></swiper-slide>
-        </swiper>
-        <!-- //하단 아이콘 -->
-=======
         </swiper> -->
->>>>>>> master
-      </div>
         <!-- //상단 갤러리 -->
+      </div>
     </div>
     <!-- 하단 아이콘 슬라이드 -->
     <swiper 
       class="swiper" 
-      :options="swiperOption"
+      :options="swiperOption" 
+      @click-slide="clickSlide"
     >
       <swiper-slide
         v-for="(item, index) in list"
@@ -88,9 +109,9 @@
     /* width:56vw; */ width:66%;  /* height:42vw; */height: 100%;
     /* display:flex; align-items:center; justify-content:space-between; -webkit-box-pack:justify;padding:124px 6vw 219px 35vw; */
   }
-  .eunhye-logo {display:flex; flex-grow: 1;align-items:center; justify-content:space-between; -webkit-box-pack:justify; /* width:28vw; */ z-index:9999;}
-  .eunhye-logo img {display:block; margin:0 auto; width:70%;}
-  .gallery-thumbs:after {
+  .eunhye-logo {display:flex; flex-grow: 1;align-items:center; justify-content:space-between; -webkit-box-pack:justify; width:28vw; z-index:9999;}
+  .eunhye-logo img {display:block; width:70%;}
+  .swiper-container:after {
     position:absolute; top:-25px; right:0; left:0; width:100%; height:12px; font-size:11px; color:rgba(0,0,0,.45); text-align:center; content:"Please select icon";
     animation:navigation 6s cubic-bezier(.77,0,.175,1) infinite;
     animation-duration: 6s;
@@ -102,13 +123,13 @@
     animation-play-state: running;
     animation-name: navigation;
   }
-  .swiper-container {overflow:visible;}
-  .swiper-slide {background:#ececec;}
+  // .swiper-container {overflow:visible;}
+  // .swiper-slide {background:#ececec;}
   .gallery-top {
-    /* width:56vw; */height:100%;
-    .swiper-slide {
-      position:relative; width:56vw; height:42vw; max-height:100%;
-      .project-tit {height:100%;}
+    position:relative; width:100%; height:42vw; max-height:100%;
+      .project-tit {
+        position:absolute; width:100%; height:100%; background-color:#ececec;
+      }
       // 상단 비주얼 좌측
       .visual-con {
         /* position:absolute; */ position:relative; float:left;
@@ -178,6 +199,7 @@
     }
 
     // 현재 슬라이드
+    /*
     .swiper-slide-active {
       .visual-con {
         .visual1,
@@ -198,7 +220,9 @@
         }
       }
     }
+    */
     // 이전 슬라이드
+    /*
     .swiper-slide-prev {
       .visual-con {
         .visual-area {
@@ -224,8 +248,9 @@
           a {}
         }
       }
-    }
+    }*/
     // 다음 슬라이드
+    /*
     .swiper-slide-next {
       .visual-con {
         .visual-area {
@@ -249,28 +274,27 @@
           a {}
         }
       }
-    }
-    .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
-    .slide-2 .visual1 {background-color:rgb(7, 120, 143);}
-    .slide-3 .visual1 {background-color:rgb(2, 59, 142);}
-    .slide-4 .visual1 {background-color:rgb(240, 139, 113);}
-    .slide-5 .visual1 {background-color:rgb(232, 211, 31);}
-    .slide-6 .visual1 {background-color:rgb(0, 0, 0);}
-    .slide-7 .visual1 {background-color:rgb(204, 204, 204);}
-    .slide-8 .visual1 {background-color:rgb(249, 205, 22);}
-    .slide-9 .visual1 {background-color:rgb(239, 132, 145);}
-    .slide-10 .visual1 {background-color:rgb(239, 132, 145);}
-    .slide-11 .visual1 {background-color:rgb(239, 132, 145);}
-    .slide-12 .visual1 {background-color:rgb(239, 132, 145);}
-    .slide-13 .visual1 {background-color:rgb(239, 132, 145);}
-    .slide-14 .visual1 {background-color:rgb(204, 204, 204);}
-    .slide-15 .visual1 {background-color:rgb(249, 205, 22);}
+      */
+    // .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
+    // .slide-2 .visual1 {background-color:rgb(7, 120, 143);}
+    // .slide-3 .visual1 {background-color:rgb(2, 59, 142);}
+    // .slide-4 .visual1 {background-color:rgb(240, 139, 113);}
+    // .slide-5 .visual1 {background-color:rgb(232, 211, 31);}
+    // .slide-6 .visual1 {background-color:rgb(0, 0, 0);}
+    // .slide-7 .visual1 {background-color:rgb(204, 204, 204);}
+    // .slide-8 .visual1 {background-color:rgb(249, 205, 22);}
+    // .slide-9 .visual1 {background-color:rgb(239, 132, 145);}
+    // .slide-10 .visual1 {background-color:rgb(239, 132, 145);}
+    // .slide-11 .visual1 {background-color:rgb(239, 132, 145);}
+    // .slide-12 .visual1 {background-color:rgb(239, 132, 145);}
+    // .slide-13 .visual1 {background-color:rgb(239, 132, 145);}
+    // .slide-14 .visual1 {background-color:rgb(204, 204, 204);}
+    // .slide-15 .visual1 {background-color:rgb(249, 205, 22);}
 
-  }
 
   /* 하단 섬네일 슬라이드 */
   .swiper-container {
-    position:fixed; right:0; bottom:0; left:0; width:100%; height:140px;
+    overflow:visible; position:fixed; right:0; bottom:0; left:0; width:100%; height:140px;
     padding:23px 0 22px;
     background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDUiPjxwYXRoIGZpbGw9IiNjNmM2YzYiIGQ9Ik0yIDBoMXYxSDJ6Ii8+PC9zdmc+);
     background-position:50%;
@@ -289,7 +313,7 @@
       img {width:100%;}
     }
     &.gallery-top {
-      height: 80%;
+      height: 100%;
       width: 100%;
     }
     &.gallery-thumbs {
@@ -348,6 +372,7 @@ export default {
         centeredSlides: true,
         touchRatio: 0.2,
         slideToClickedSlide: true,
+        initialSlide: 0
       },
       list: [
         {
@@ -478,6 +503,28 @@ export default {
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
         }
       ],
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper;
+    }
+  },
+  methods: {
+    clickSlide(index, reallyIndex){
+      console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex)
+      const projectTit = document.querySelectorAll('.project-tit');// eslint-disable-line no-unused-vars
+      const projectTit2 = document.querySelector('.project-tit');// eslint-disable-line no-unused-vars
+      const projectSlide = document.querySelector('.slide-' + reallyIndex);// eslint-disable-line no-unused-vars
+      for(let i = 0 ; i < projectTit.length; i++){
+        if(projectTit2.classList.contains('active')){
+          console.log('remove');
+          // projectTit.classList.remove('active');
+        }
+      }
+      projectSlide.classList.add('active');
+      // console.log(projectTit.length);
+      // console.log(projectSlide);
     }
   }
 }

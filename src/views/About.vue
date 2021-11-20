@@ -3,7 +3,7 @@
     <p class="skills">
       VANILLA JS, JQUERY, Vue.js, SEO, SASS, BOOTSTRAP, GIT, Gulp
     </p>
-    <img src="~@/assets/img/common/its_me.gif" alt="">
+    <img class="me" src="~@/assets/img/common/its_me.gif" alt="">
     <!-- 스크롤 참고 : https://www.youtube.com/watch?v=L4YtP6likYI -->
   </div>
 </template>
@@ -15,5 +15,6 @@
     background-size:unset;
     background-position: center;
     background-attachment: fixed;
+    .me {width:200px;}
   }
 </style>
