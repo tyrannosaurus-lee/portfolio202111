@@ -2,11 +2,11 @@
   <div class="Works">
     <div class="works-con">
       <div class="eunhye-logo">
-          <img src="~@/assets/img/common/logo_eunhye.png" alt="">
-        </div>
+        <img src="~@/assets/img/common/logo_eunhye.png" alt="">
+      </div>
       <div class="transition-container">
         <!-- 상단 갤러리 -->
-        <swiper
+        <!-- <swiper
           class="swiper gallery-top"
           :options="swiperOptionTop"
           ref="swiperTop"
@@ -45,19 +45,24 @@
               </div>
             </div>
           </swiper-slide>
-        </swiper>
-        <!-- //상단 갤러리 -->
-        <!-- 하단 아이콘 -->
-        <swiper class="swiper gallery-thumbs" :options="swiperOptionThumbs" ref="swiperThumbs">
-          <swiper-slide
-            v-for="(item, index) in list"
-            :key="index"
-            :class="`slide-${index + 1}`"
-          ></swiper-slide>
-        </swiper>
-        <!-- //하단 아이콘 -->
+        </swiper> -->
       </div>
+        <!-- //상단 갤러리 -->
     </div>
+    <!-- 하단 아이콘 슬라이드 -->
+    <swiper 
+      class="swiper" 
+      :options="swiperOption"
+    >
+      <swiper-slide
+        v-for="(item, index) in list"
+        :key="index"
+        :class="`slide-${index + 1}`"
+      >
+        <img :src="`${item.icon}`" alt="">
+      </swiper-slide>
+    </swiper>
+    <!-- // 하단 아이콘 슬라이드 -->
   </div>
 </template>
 
@@ -250,7 +255,7 @@
   }
 
   /* 하단 섬네일 슬라이드 */
-  .gallery-thumbs {
+  .swiper-container {
     position:fixed; right:0; bottom:0; left:0; width:100%; height:140px;
     padding:23px 0 22px;
     background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1IDUiPjxwYXRoIGZpbGw9IiNjNmM2YzYiIGQ9Ik0yIDBoMXYxSDJ6Ii8+PC9zdmc+);
@@ -262,51 +267,12 @@
       background-size:95px;
       background-position:center;
       background-repeat:no-repeat;
-      &.slide-1 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/4BEz6b2G7oQebnFJQW1tVr/e370619112d1346f2b8e15cb6454c8f0/icon_lips_1c.svg');
+      background-color:transparent;
+      opacity:0.4;
+      &.swiper-slide-active {
+        opacity: 1;
       }
-      &.slide-2 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5ceBjjwAHT8kHuy5AE1v7p/c3457c290ce485c23ff84e2552ac736b/icon_pksha_1c.svg');
-      }
-      &.slide-3 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5ctVSV4padnYHQNKX1UPjq/29ecb698e21a6dd6b238cad499c71432/polca_1C.svg');
-      }
-      &.slide-4 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/JiVBlurI1tR5VJey1p0st/619d6aaddd8161b8c1937a181c277f03/icon_akewaka.svg');
-      }
-      &.slide-5 {
-        background-image:url('~@/assets/img/works/works_icon05.png');
-      }
-      &.slide-6 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/70ZExw3p6Ex3mnllvqi5dI/d7ed50be73f8b1e90137ef4bde55543f/icon_gmb.svg');
-      }
-      &.slide-7 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/7dbe9pIaCBw7xeyKT9UBHK/b20f1d6baa6a8e5262da045353536330/icon_abc.svg');
-      }
-      &.slide-8 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5TT5Zse3x5p7kOv9sCuzVA/a00fddcc4649ab933128a792a2381ea4/icon_alu.svg');
-      }
-      &.slide-9 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg');
-      }
-      &.slide-10 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5ceBjjwAHT8kHuy5AE1v7p/c3457c290ce485c23ff84e2552ac736b/icon_pksha_1c.svg');
-      }
-      &.slide-11 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/5ctVSV4padnYHQNKX1UPjq/29ecb698e21a6dd6b238cad499c71432/polca_1C.svg');
-      }
-      &.slide-12 {
-        background-image:url('~@/assets/img/works/works_icon12.png');
-      }
-       &.slide-13 {
-        background-image:url('https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg');
-      }
-      &.slide-14 {
-        background-image:url('~@/assets/img/works/works_icon14.png');
-      }
-      &.slide-15 {
-        background-image:url('~@/assets/img/works/works_icon15.png');
-      }
+      img {width:100%;}
     }
     &.gallery-top {
       height: 80%;
@@ -322,9 +288,7 @@
       height: 100%;
       opacity: 0.4;
     }
-    &.gallery-thumbs .swiper-slide-active {
-      opacity: 1;
-    }
+    
   }
 @media (max-width: 750px) {
   #nav {top:70px;}
@@ -363,27 +327,13 @@ export default {
   },
   data() {
     return {
-      swiperOptionTop: {
+      swiperOption: {
+        slidesPerView: 10,
+        spaceBetween: 30,
         loop: true,
-        loopedSlides: 8,
-        // spaceBetween: 8,
-        effect: 'fade',
-        lazy: true,
-        speed: 1000,
-        // navigation: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev'
-        // }
-      },
-      swiperOptionThumbs: {
-        loop: true,
-        loopedSlides: 8,
-        spaceBetween: 1,
         centeredSlides: true,
-        slidesPerView: 8,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        speed: 1000,
       },
       list: [
         {
@@ -392,6 +342,7 @@ export default {
             device: 'Responsive Web',
             period: '2020.5 ~ 2020.10',
             image: require('@/assets/img/works/bg01.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/4BEz6b2G7oQebnFJQW1tVr/e370619112d1346f2b8e15cb6454c8f0/icon_lips_1c.svg',
             url: 'https://hey.news.co.kr'
         },
         {
@@ -400,6 +351,7 @@ export default {
             device: 'APP (web view)',
             period: '2020.8 ~ 2020.10',
             image: require('@/assets/img/works/bg02.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ceBjjwAHT8kHuy5AE1v7p/c3457c290ce485c23ff84e2552ac736b/icon_pksha_1c.svg',
             url: 'https://play.google.com/store/apps/details?id=com.jtbc.news&hl=ko'
         },
         {
@@ -408,6 +360,7 @@ export default {
             device: 'Responsive Web',
             period: '2020.02',
             image: require('@/assets/img/works/bg03.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ctVSV4padnYHQNKX1UPjq/29ecb698e21a6dd6b238cad499c71432/polca_1C.svg',
             url: 'http://eunhye106.cafe24.com/event/weather/event.html'
         },
         {
@@ -416,6 +369,7 @@ export default {
             device: 'pc, mobile web',
             period: '2019.12',
             image: require('@/assets/img/works/bg04.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/JiVBlurI1tR5VJey1p0st/619d6aaddd8161b8c1937a181c277f03/icon_akewaka.svg',
             url: 'http://www.goldendisc.co.kr/kr/'
         },
         {
@@ -424,6 +378,7 @@ export default {
             device: 'pc, mobile web',
             period: '2019. 04',
             image: require('@/assets/img/works/bg05.jpg'),
+            icon: require('@/assets/img/works/works_icon05.png'),
             url: 'https://www.baeksangawards.co.kr/'
         },
         {
@@ -432,6 +387,7 @@ export default {
             device: 'pc, mobile web',
             period: '2021.05',
             image: require('@/assets/img/works/bg06.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/70ZExw3p6Ex3mnllvqi5dI/d7ed50be73f8b1e90137ef4bde55543f/icon_gmb.svg',
             url: 'http://eunhye106.cafe24.com/jtbc_5th/'
         },
         {
@@ -440,6 +396,7 @@ export default {
             device: 'pc, mobile web',
             period: '2022.05',
             image: require('@/assets/img/works/bg07.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/7dbe9pIaCBw7xeyKT9UBHK/b20f1d6baa6a8e5262da045353536330/icon_abc.svg',
             url: 'http://eunhye106.cafe24.com/event/knowingbrother/brother_mv_event.html'
         },{
             id: 8,
@@ -447,6 +404,7 @@ export default {
             device: 'pc, mobile web',
             period: '2023.05',
             image: require('@/assets/img/works/bg08.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5TT5Zse3x5p7kOv9sCuzVA/a00fddcc4649ab933128a792a2381ea4/icon_alu.svg',
             url: 'http://eunhye106.cafe24.com/event/beautyinside/beautyinside_event.html'
         },{
             id: 9,
@@ -454,6 +412,7 @@ export default {
             device: 'pc, mobile web',
             period: '2024.05',
             image: require('@/assets/img/works/bg09.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg',
             url: 'https://jtbc2.joins.com/'
         },{
             id: 10,
@@ -461,6 +420,7 @@ export default {
             device: 'pc, mobile web',
             period: '2025.05',
             image: require('@/assets/img/works/bg10.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ceBjjwAHT8kHuy5AE1v7p/c3457c290ce485c23ff84e2552ac736b/icon_pksha_1c.svg',
             url: 'http://eunhye106.cafe24.com/event/hiddensinger5/legend_event.html'
         },{
             id: 11,
@@ -468,6 +428,7 @@ export default {
             device: 'pc, mobile web',
             period: '',
             image: require('@/assets/img/works/bg11.jpg'),
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ctVSV4padnYHQNKX1UPjq/29ecb698e21a6dd6b238cad499c71432/polca_1C.svg',
             url: 'https://eunhye106.cafe24.com/family_point/family_point01.html'
         },{
             id: 12,
@@ -475,6 +436,7 @@ export default {
             device: 'pc, mobile web',
             period: '',
             image: require('@/assets/img/works/bg12.jpg'),
+            icon: require('@/assets/img/works/works_icon12.png'),
             url: 'http://eunhye106.cafe24.com/event/hotclean/event.html'
         },{
             id: 13,
@@ -482,13 +444,15 @@ export default {
             device: 'pc, mobile web',
             period: '',
             image: require('@/assets/img/works/bg13.jpg'),
-            url: 'http://eunhye106.cafe24.com/jtbc_now/jtbc_now3.htmlㄴ'
+            icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg',
+            url: 'http://eunhye106.cafe24.com/jtbc_now/jtbc_now3.html'
         },{
             id: 14,
             name: 'JTBC worldwide',
             device: 'pc, mobile web',
             period: '',
             image: require('@/assets/img/works/bg14.jpg'),
+            icon: require('@/assets/img/works/works_icon14.png'),
             url: 'http://www.jtbcworldwide.com'
         },{
             id: 15,
@@ -496,18 +460,11 @@ export default {
             device: 'pc, mobile web',
             period: '',
             image: require('@/assets/img/works/bg15.jpg'),
+            icon: require('@/assets/img/works/works_icon15.png'),
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
         }
       ],
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      const swiperTop = this.$refs.swiperTop.$swiper
-      const swiperThumbs = this.$refs.swiperThumbs.$swiper
-      swiperTop.controller.control = swiperThumbs
-      swiperThumbs.controller.control = swiperTop
-    })
   }
 }
 </script>
