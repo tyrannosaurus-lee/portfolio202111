@@ -19,7 +19,7 @@
                   <img :src="`${item.image}`" alt="">
                 </div>
                 <div class="visual3">
-                  <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
+                  <a :href="`${item.url}`" target="_blank">{{item.name}}<br><span style="font-size:14px">{{ reallyIndex }}번째 슬라이드</span></a>
                 </div>
               </div>
             </div>
@@ -40,46 +40,6 @@
             </div>
           </div>
         </div>
-        <!-- <swiper
-          class="swiper gallery-top"
-          :options="swiperOptionTop"
-          ref="swiperTop"
-        >
-          <swiper-slide
-            v-for="(item, key, index) in list"
-            :key="item.id"
-            :class="`slide-${index + 1}`"
-          >
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual-area">
-                  <div class="visual1"></div>
-                  <div class="visual2">
-                    <img :src="`${item.image}`" alt="">
-                  </div>
-                  <div class="visual3">
-                    <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-detail">
-                <div class="slider-counter">
-                  <span class="label">No.</span>
-                  <span class="now">{{index + 1}}</span>
-                  <span class="all">{{list.length}}</span>
-                </div>
-                <div class="project-name"><p>{{item.name}}</p></div>
-                <div class="project-info">
-                  <span class="period">{{item.period}}</span>
-                  <span class="device">{{item.device}}</span>
-                </div>
-                <div class="project-shortcut">
-                  <a :href="`${item.url}`" target="_blank">View detail</a>
-                </div>
-              </div>
-            </div>
-          </swiper-slide>
-        </swiper> -->
         <!-- //상단 갤러리 -->
       </div>
     </div>
@@ -106,8 +66,7 @@
 .works-con {position:relative; height:100%;}
 .works-con {display:flex; align-items:center; justify-content:space-between; -webkit-box-pack:justify; padding:124px 6vw 219px;}
   .transition-container {
-    /* width:56vw; */ width:66%;  /* height:42vw; */height: 100%;
-    /* display:flex; align-items:center; justify-content:space-between; -webkit-box-pack:justify;padding:124px 6vw 219px 35vw; */
+    width:66%; height: 100%;
   }
   .eunhye-logo {display:flex; flex-grow: 1;align-items:center; justify-content:space-between; -webkit-box-pack:justify; width:28vw; z-index:9999;}
   .eunhye-logo img {display:block; width:70%;}
@@ -123,8 +82,6 @@
     animation-play-state: running;
     animation-name: navigation;
   }
-  // .swiper-container {overflow:visible;}
-  // .swiper-slide {background:#ececec;}
   .gallery-top {
     position:relative; width:100%; height:42vw; max-height:100%;
       .project-tit {
@@ -132,7 +89,7 @@
       }
       // 상단 비주얼 좌측
       .visual-con {
-        /* position:absolute; */ position:relative; float:left;
+        position:relative; float:left;
         width:50%; height:100%;
         .visual-area {
           position:relative;margin:0 auto;padding:2vw; max-width:370px; height:100%;
@@ -334,19 +291,22 @@
   .transition-container {width:100%;}
 
   .gallery-top {
-    .swiper-slide {
-      height:100%;
-      .visual-con {
-        width:100%;
-        .visual-area {
-          width:80%; max-width: unset;
-          .visual3 {
-            font-size:8vw;
-            // box-shadow:30px 30px 44px rgb(0 0 0 / 20%);
-          }
+    height:100%;
+    .visual-con {
+      width:100%;
+      .visual-area {
+        width:80%; max-width: unset;
+        .visual3 {
+          font-size:8vw;
+          // box-shadow:30px 30px 44px rgb(0 0 0 / 20%);
         }
       }
-      .project-detail {display: none;}
+    }
+    .project-detail {display: none;}
+  }
+  .swiper-container {
+    .swiper-slide {
+      img {width:auto; height:100%;}
     }
   }
 }
@@ -372,7 +332,21 @@ export default {
         centeredSlides: true,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        initialSlide: 0
+        initialSlide: 0,
+        breakpoints: {
+          768: {
+            slidesPerView: 5,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          },
+          320: {
+            slidesPerView: 4,
+            spaceBetween: 10
+          }
+        }
       },
       list: [
         {
@@ -503,28 +477,18 @@ export default {
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
         }
       ],
+      reallyIndex : 0
     }
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    }
+    },
   },
   methods: {
     clickSlide(index, reallyIndex){
-      console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex)
-      const projectTit = document.querySelectorAll('.project-tit');// eslint-disable-line no-unused-vars
-      const projectTit2 = document.querySelector('.project-tit');// eslint-disable-line no-unused-vars
-      const projectSlide = document.querySelector('.slide-' + reallyIndex);// eslint-disable-line no-unused-vars
-      for(let i = 0 ; i < projectTit.length; i++){
-        if(projectTit2.classList.contains('active')){
-          console.log('remove');
-          // projectTit.classList.remove('active');
-        }
-      }
-      projectSlide.classList.add('active');
-      // console.log(projectTit.length);
-      // console.log(projectSlide);
+      console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex);
+      this.reallyIndex = reallyIndex;
     }
   }
 }
