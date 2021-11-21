@@ -10,32 +10,35 @@
           <div 
             v-for="(item, index) in list"
             :key="item.id"
-            :class="`project-tit slide-${index}`"
+            :class="[`project-tit slide-${index +1}`]"
           >
-            <div class="visual-con">
-              <div class="visual-area">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img :src="`${item.image}`" alt="">
+            <div v-if="index === reallyIndex">
+              <div class="visual-con">
+                <div class="visual-area">
+                  <div class="visual1"></div>
+                  <div class="visual2">
+                    <!-- <img :src="`${item.image}`" alt=""> -->
+                    <img :src="`${list[index].image}`" alt="">
+                  </div>
+                  <div class="visual3">
+                    <a :href="`${item.url}`" target="_blank">{{item.name}}<br><span style="font-size:14px">{{ reallyIndex }}번째 슬라이드</span></a>
+                  </div>
                 </div>
-                <div class="visual3">
-                  <a :href="`${item.url}`" target="_blank">{{item.name}}<br><span style="font-size:14px">{{ reallyIndex }}번째 슬라이드</span></a>
+              </div>
+              <div class="project-detail">
+                <div class="slider-counter">
+                  <span class="label">No.</span>
+                  <span class="now">{{index + 1}}</span>
+                  <span class="all">{{list.length}}</span>
                 </div>
-              </div>
-            </div>
-            <div class="project-detail">
-              <div class="slider-counter">
-                <span class="label">No.</span>
-                <span class="now">{{index + 1}}</span>
-                <span class="all">{{list.length}}</span>
-              </div>
-              <div class="project-name"><p>{{item.name}}</p></div>
-              <div class="project-info">
-                <span class="period">{{item.period}}</span>
-                <span class="device">{{item.device}}</span>
-              </div>
-              <div class="project-shortcut">
-                <a :href="`${item.url}`" target="_blank">View detail</a>
+                <div class="project-name"><p>{{item.name}}</p></div>
+                <div class="project-info">
+                  <span class="period">{{item.period}}</span>
+                  <span class="device">{{item.device}}</span>
+                </div>
+                <div class="project-shortcut">
+                  <a :href="`${item.url}`" target="_blank">View detail</a>
+                </div>
               </div>
             </div>
           </div>
@@ -84,8 +87,10 @@
   }
   .gallery-top {
     position:relative; width:100%; height:42vw; max-height:100%;
+      
       .project-tit {
-        position:absolute; width:100%; height:100%; background-color:#ececec;
+        position:absolute; width:100%; height:100%;
+        & > div {position:relative; height:100%; background-color:#ececec;}
       }
       // 상단 비주얼 좌측
       .visual-con {
@@ -335,7 +340,7 @@ export default {
         initialSlide: 0,
         breakpoints: {
           768: {
-            slidesPerView: 5,
+            slidesPerView: 10,
             spaceBetween: 30
           },
           640: {
@@ -484,12 +489,13 @@ export default {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
+    
   },
   methods: {
     clickSlide(index, reallyIndex){
       console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex);
       this.reallyIndex = reallyIndex;
-    }
+    },
   }
 }
 </script>
