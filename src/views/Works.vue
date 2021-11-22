@@ -7,7 +7,7 @@
       <div class="transition-container">
         <!-- 상단 갤러리 -->
         <div class="gallery-top">
-          <div 
+          <div
             v-for="(item, index) in list"
             :key="item.id"
             :class="`project-tit slide-${index}`"
@@ -40,53 +40,13 @@
             </div>
           </div>
         </div>
-        <!-- <swiper
-          class="swiper gallery-top"
-          :options="swiperOptionTop"
-          ref="swiperTop"
-        >
-          <swiper-slide
-            v-for="(item, key, index) in list"
-            :key="item.id"
-            :class="`slide-${index + 1}`"
-          >
-            <div class="project-tit">
-              <div class="visual-con">
-                <div class="visual-area">
-                  <div class="visual1"></div>
-                  <div class="visual2">
-                    <img :src="`${item.image}`" alt="">
-                  </div>
-                  <div class="visual3">
-                    <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
-                  </div>
-                </div>
-              </div>
-              <div class="project-detail">
-                <div class="slider-counter">
-                  <span class="label">No.</span>
-                  <span class="now">{{index + 1}}</span>
-                  <span class="all">{{list.length}}</span>
-                </div>
-                <div class="project-name"><p>{{item.name}}</p></div>
-                <div class="project-info">
-                  <span class="period">{{item.period}}</span>
-                  <span class="device">{{item.device}}</span>
-                </div>
-                <div class="project-shortcut">
-                  <a :href="`${item.url}`" target="_blank">View detail</a>
-                </div>
-              </div>
-            </div>
-          </swiper-slide>
-        </swiper> -->
         <!-- //상단 갤러리 -->
       </div>
     </div>
     <!-- 하단 아이콘 슬라이드 -->
-    <swiper 
-      class="swiper" 
-      :options="swiperOption" 
+    <swiper
+      class="swiper"
+      :options="swiperOption"
       @click-slide="clickSlide"
     >
       <swiper-slide
@@ -326,7 +286,7 @@
       height: 100%;
       opacity: 0.4;
     }
-    
+
   }
 @media (max-width: 750px) {
   #nav {top:70px;}
@@ -516,12 +476,12 @@ export default {
       const projectTit = document.querySelectorAll('.project-tit');// eslint-disable-line no-unused-vars
       const projectTit2 = document.querySelector('.project-tit');// eslint-disable-line no-unused-vars
       const projectSlide = document.querySelector('.slide-' + reallyIndex);// eslint-disable-line no-unused-vars
-      for(let i = 0 ; i < projectTit.length; i++){
+      // for(let i = 0 ; i < projectTit.length; i++){
         if(projectTit2.classList.contains('active')){
           console.log('remove');
-          // projectTit.classList.remove('active');
+          projectTit.classList.remove('active');
         }
-      }
+      // }
       projectSlide.classList.add('active');
       // console.log(projectTit.length);
       // console.log(projectSlide);
