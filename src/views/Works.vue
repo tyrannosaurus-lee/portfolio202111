@@ -10,9 +10,9 @@
           <div
             v-for="(item, index) in list"
             :key="item.id"
-            :class="[`project-tit slide-${index +1}`, {active : index == reallyIndex}]"
+            :class="[`project-tit slide-${index +1}`, {active : index == reallyIndex}, {prev : index == (reallyIndex - 1)}, {next : index == (reallyIndex + 1)}]"
           >
-            <div v-if="index === reallyIndex">
+            <!-- <div v-if="index == reallyIndex"> -->
               <div class="visual-con">
                 <div class="visual-area">
                   <div class="visual1"></div>
@@ -22,7 +22,6 @@
                   <div class="visual3">
                     <a :href="`${item.url}`" target="_blank">{{item.name}}
                       <br>
-                      <span style="font-size:14px">{{ reallyIndex + 1 }}번째 슬라이드</span>
                     </a>
                   </div>
                 </div>
@@ -42,9 +41,8 @@
                   <a :href="`${item.url}`" target="_blank">View detail</a>
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
-          <!-- {{ targetTit }} -->
         </div>
         <!-- //상단 갤러리 -->
       </div>
@@ -92,8 +90,8 @@
     position:relative; width:100%; height:42vw; max-height:100%;
 
       .project-tit {
-        position:absolute; width:100%; height:100%;
-        & > div {position:relative; height:100%; background-color:#ececec;}
+        position:absolute; width:100%; height:100%; /* background-color:#ececec; */
+        & > div {height:100%;}
       }
       // 상단 비주얼 좌측
       .visual-con {
@@ -127,7 +125,7 @@
         .slider-counter {
           overflow:hidden; display:flex; -webkit-box-pack:end; justify-content:flex-end; font-size:10px;font-weight:600;
           .label {margin-right:6px;}
-          .now {}
+          .now {min-width:11px; font-size:0;}
           .all {
             opacity:.25;
             &:before {display:inline-block; content:""; margin:0 5px; width:22px; height:1px; background:#000;}
@@ -135,11 +133,11 @@
         }
         .project-name {
           overflow:hidden; display:flex; -webkit-box-align:center; align-items:center; justify-content:right; height:10.2vw;
-          font-weight:400; font-size:3vw; line-height:1; letter-spacing:-1px; color:#000;
+          font-weight:400; font-size:3vw; line-height:1; letter-spacing:-1px; color:transparent; text-align:right;
           transform-origin: center right;
         }
         .project-info {
-          font-size:10px; font-weight:400; color:#6b6b6b; text-align:right;
+          font-size:10px; font-weight:400; color:#6b6b6b; text-align:right; background-color:#ececec;
           .period {position:relative; padding-right:15px;}
           .period:after {position:absolute; right:0; top:0; bottom:0; content:" ・ ";}
           .device {}
@@ -165,6 +163,7 @@
 
     // 현재 슬라이드
     .active {
+      z-index:1;
       .visual-con {
         .visual1,
         div.visual2 { opacity:1;}
@@ -172,21 +171,25 @@
       .project-detail {
         .slider-counter {
           .now {
-            transform:scale(1) rotate(0) translateY(0);
+            font-size:10px; transform:scale(1) rotate(0) translateY(0);
+            animation: fadeOut .2s linear alternate;
           }
         }
         .project-name {
-          p {transform:scale(1) rotate(0) translateY(0);}
+          p {
+            color:#000; transform:scale(1) rotate(0) translateY(0);
+            animation: fadeOut 1s linear alternate;
+          }
         }
-        .project-info {}
-        .project-shortcut {
-          a {}
+        @keyframes fadeOut {
+          from {opacity: 0;}
+          to {opacity: 1;}
         }
       }
+
     }
     // 이전 슬라이드
-    /*
-    .swiper-slide-prev {
+    .prev {
       .visual-con {
         .visual-area {
           div.visual2 {
@@ -198,11 +201,13 @@
       .project-detail {
         .slider-counter {
           .now {
+            font-size:10px;
             transition:transform .5s cubic-bezier(.55,.055,.675,.19);
             transform:scale(.8) rotate(-20deg) translateY(-100vh); opacity:1;
           }
         }
         .project-name p {
+          color:#000;
           transition:transform .5s cubic-bezier(.55,.055,.675,.19);
           transform:scale(.3) rotate(70deg) translateY(-100vh);
         }
@@ -212,10 +217,9 @@
         }
       }
     }
-    */
     // 다음 슬라이드
     /*
-    .swiper-slide-next {
+    .next {
       .visual-con {
         .visual-area {
           div.visual2 {
@@ -238,7 +242,8 @@
           a {}
         }
       }
-      */
+    }
+    */
     .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
     .slide-2 .visual1 {background-color:rgb(7, 120, 143);}
     .slide-3 .visual1 {background-color:rgb(2, 59, 142);}
@@ -485,27 +490,23 @@ export default {
         }
       ],
       reallyIndex : 0,
-      // isActive: false,
-      // hasError: false
-      // targetTit : `<div class="project-tit slide-1"><div><div class="visual-con"><div class="visual-area"><div class="visual1"></div><div class="visual2"><img src="/img/bg01.6862cfd5.jpg" alt=""></div><div class="visual3"><a href="https://hey.news.co.kr" target="_blank">HeyNews<br><span style="font-size: 14px;">0번째 슬라이드</span></a></div></div></div><div class="project-detail"><div class="slider-counter"><span class="label">No.</span><span class="now">1</span><span class="all">15</span></div><div class="project-name"><p>HeyNews</p></div><div class="project-info"><span class="period">2020.5 ~ 2020.10</span><span class="device">Responsive Web</span></div><div class="project-shortcut"><a href="https://hey.news.co.kr" target="_blank">View detail</a></div></div></div></div>`
+      totalIndex : 15
     }
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
     },
-    // classActive() {
-    //   return {
-    //     isActive: targetTit === classActive
-    //   }
-    // }
   },
   methods: {
     clickSlide(index, reallyIndex){
       const projectTit = document.querySelectorAll('.project-tit');// eslint-disable-line no-unused-vars
       const targetTit = document.querySelector('.slide-' + (reallyIndex + 1));// eslint-disable-line no-unused-vars
+      const slideBeforeActive = targetTit.previousElementSibling;// eslint-disable-line no-unused-vars
+      const slideAfterActive = targetTit.nextSibling;// eslint-disable-line no-unused-vars
       console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex);
       this.reallyIndex = reallyIndex;
+      this.totalIndex = index;
     },
   }
 }
