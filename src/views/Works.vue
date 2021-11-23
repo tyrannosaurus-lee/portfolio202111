@@ -1,44 +1,50 @@
 <template>
   <div class="Works">
     <div class="works-con">
-      <div class="eunhye-logo">
+      <h1 class="eunhye-logo">
         <img src="~@/assets/img/common/logo_eunhye.png" alt="">
-      </div>
+      </h1>
       <div class="transition-container">
         <!-- 상단 갤러리 -->
         <div class="gallery-top">
           <div
             v-for="(item, index) in list"
             :key="item.id"
-            :class="`project-tit slide-${index}`"
+            :class="[`project-tit slide-${index +1}`, {active : index == reallyIndex}]"
           >
-            <div class="visual-con">
-              <div class="visual-area">
-                <div class="visual1"></div>
-                <div class="visual2">
-                  <img :src="`${item.image}`" alt="">
+            <div v-if="index === reallyIndex">
+              <div class="visual-con">
+                <div class="visual-area">
+                  <div class="visual1"></div>
+                  <div class="visual2">
+                    <img :src="`${list[index].image}`" alt="">
+                  </div>
+                  <div class="visual3">
+                    <a :href="`${item.url}`" target="_blank">{{item.name}}
+                      <br>
+                      <span style="font-size:14px">{{ reallyIndex + 1 }}번째 슬라이드</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="visual3">
-                  <a :href="`${item.url}`" target="_blank">{{item.name}}</a>
+              </div>
+              <div class="project-detail">
+                <div class="slider-counter">
+                  <span class="label">No.</span>
+                  <span class="now">{{index + 1}}</span>
+                  <span class="all">{{list.length}}</span>
                 </div>
-              </div>
-            </div>
-            <div class="project-detail">
-              <div class="slider-counter">
-                <span class="label">No.</span>
-                <span class="now">{{index + 1}}</span>
-                <span class="all">{{list.length}}</span>
-              </div>
-              <div class="project-name"><p>{{item.name}}</p></div>
-              <div class="project-info">
-                <span class="period">{{item.period}}</span>
-                <span class="device">{{item.device}}</span>
-              </div>
-              <div class="project-shortcut">
-                <a :href="`${item.url}`" target="_blank">View detail</a>
+                <div class="project-name"><p>{{item.name}}</p></div>
+                <div class="project-info">
+                  <span class="period">{{item.period}}</span>
+                  <span class="device">{{item.device}}</span>
+                </div>
+                <div class="project-shortcut">
+                  <a :href="`${item.url}`" target="_blank">View detail</a>
+                </div>
               </div>
             </div>
           </div>
+          <!-- {{ targetTit }} -->
         </div>
         <!-- //상단 갤러리 -->
       </div>
@@ -66,8 +72,7 @@
 .works-con {position:relative; height:100%;}
 .works-con {display:flex; align-items:center; justify-content:space-between; -webkit-box-pack:justify; padding:124px 6vw 219px;}
   .transition-container {
-    /* width:56vw; */ width:66%;  /* height:42vw; */height: 100%;
-    /* display:flex; align-items:center; justify-content:space-between; -webkit-box-pack:justify;padding:124px 6vw 219px 35vw; */
+    width:66%; height: 100%;
   }
   .eunhye-logo {display:flex; flex-grow: 1;align-items:center; justify-content:space-between; -webkit-box-pack:justify; width:28vw; z-index:9999;}
   .eunhye-logo img {display:block; width:70%;}
@@ -83,16 +88,16 @@
     animation-play-state: running;
     animation-name: navigation;
   }
-  // .swiper-container {overflow:visible;}
-  // .swiper-slide {background:#ececec;}
   .gallery-top {
     position:relative; width:100%; height:42vw; max-height:100%;
+
       .project-tit {
-        position:absolute; width:100%; height:100%; background-color:#ececec;
+        position:absolute; width:100%; height:100%;
+        & > div {position:relative; height:100%; background-color:#ececec;}
       }
       // 상단 비주얼 좌측
       .visual-con {
-        /* position:absolute; */ position:relative; float:left;
+        position:relative; float:left;
         width:50%; height:100%;
         .visual-area {
           position:relative;margin:0 auto;padding:2vw; max-width:370px; height:100%;
@@ -159,8 +164,7 @@
     }
 
     // 현재 슬라이드
-    /*
-    .swiper-slide-active {
+    .active {
       .visual-con {
         .visual1,
         div.visual2 { opacity:1;}
@@ -180,7 +184,6 @@
         }
       }
     }
-    */
     // 이전 슬라이드
     /*
     .swiper-slide-prev {
@@ -208,7 +211,8 @@
           a {}
         }
       }
-    }*/
+    }
+    */
     // 다음 슬라이드
     /*
     .swiper-slide-next {
@@ -235,21 +239,21 @@
         }
       }
       */
-    // .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
-    // .slide-2 .visual1 {background-color:rgb(7, 120, 143);}
-    // .slide-3 .visual1 {background-color:rgb(2, 59, 142);}
-    // .slide-4 .visual1 {background-color:rgb(240, 139, 113);}
-    // .slide-5 .visual1 {background-color:rgb(232, 211, 31);}
-    // .slide-6 .visual1 {background-color:rgb(0, 0, 0);}
-    // .slide-7 .visual1 {background-color:rgb(204, 204, 204);}
-    // .slide-8 .visual1 {background-color:rgb(249, 205, 22);}
-    // .slide-9 .visual1 {background-color:rgb(239, 132, 145);}
-    // .slide-10 .visual1 {background-color:rgb(239, 132, 145);}
-    // .slide-11 .visual1 {background-color:rgb(239, 132, 145);}
-    // .slide-12 .visual1 {background-color:rgb(239, 132, 145);}
-    // .slide-13 .visual1 {background-color:rgb(239, 132, 145);}
-    // .slide-14 .visual1 {background-color:rgb(204, 204, 204);}
-    // .slide-15 .visual1 {background-color:rgb(249, 205, 22);}
+    .slide-1 .visual1 {background-color:rgb(250, 250, 250);}
+    .slide-2 .visual1 {background-color:rgb(7, 120, 143);}
+    .slide-3 .visual1 {background-color:rgb(2, 59, 142);}
+    .slide-4 .visual1 {background-color:rgb(240, 139, 113);}
+    .slide-5 .visual1 {background-color:rgb(232, 211, 31);}
+    .slide-6 .visual1 {background-color:rgb(0, 0, 0);}
+    .slide-7 .visual1 {background-color:rgb(204, 204, 204);}
+    .slide-8 .visual1 {background-color:rgb(249, 205, 22);}
+    .slide-9 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-10 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-11 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-12 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-13 .visual1 {background-color:rgb(239, 132, 145);}
+    .slide-14 .visual1 {background-color:rgb(204, 204, 204);}
+    .slide-15 .visual1 {background-color:rgb(249, 205, 22);}
 
 
   /* 하단 섬네일 슬라이드 */
@@ -294,19 +298,22 @@
   .transition-container {width:100%;}
 
   .gallery-top {
-    .swiper-slide {
-      height:100%;
-      .visual-con {
-        width:100%;
-        .visual-area {
-          width:80%; max-width: unset;
-          .visual3 {
-            font-size:8vw;
-            // box-shadow:30px 30px 44px rgb(0 0 0 / 20%);
-          }
+    height:100%;
+    .visual-con {
+      width:100%;
+      .visual-area {
+        width:80%; max-width: unset;
+        .visual3 {
+          font-size:8vw;
+          // box-shadow:30px 30px 44px rgb(0 0 0 / 20%);
         }
       }
-      .project-detail {display: none;}
+    }
+    .project-detail {display: none;}
+  }
+  .swiper-container {
+    .swiper-slide {
+      img {width:auto; height:100%;}
     }
   }
 }
@@ -332,7 +339,21 @@ export default {
         centeredSlides: true,
         touchRatio: 0.2,
         slideToClickedSlide: true,
-        initialSlide: 0
+        initialSlide: 0,
+        breakpoints: {
+          768: {
+            slidesPerView: 10,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          },
+          320: {
+            slidesPerView: 4,
+            spaceBetween: 10
+          }
+        }
       },
       list: [
         {
@@ -463,29 +484,29 @@ export default {
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
         }
       ],
+      reallyIndex : 0,
+      // isActive: false,
+      // hasError: false
+      // targetTit : `<div class="project-tit slide-1"><div><div class="visual-con"><div class="visual-area"><div class="visual1"></div><div class="visual2"><img src="/img/bg01.6862cfd5.jpg" alt=""></div><div class="visual3"><a href="https://hey.news.co.kr" target="_blank">HeyNews<br><span style="font-size: 14px;">0번째 슬라이드</span></a></div></div></div><div class="project-detail"><div class="slider-counter"><span class="label">No.</span><span class="now">1</span><span class="all">15</span></div><div class="project-name"><p>HeyNews</p></div><div class="project-info"><span class="period">2020.5 ~ 2020.10</span><span class="device">Responsive Web</span></div><div class="project-shortcut"><a href="https://hey.news.co.kr" target="_blank">View detail</a></div></div></div></div>`
     }
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
-    }
+    },
+    // classActive() {
+    //   return {
+    //     isActive: targetTit === classActive
+    //   }
+    // }
   },
   methods: {
     clickSlide(index, reallyIndex){
-      console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex)
       const projectTit = document.querySelectorAll('.project-tit');// eslint-disable-line no-unused-vars
-      const projectTit2 = document.querySelector('.project-tit');// eslint-disable-line no-unused-vars
-      const projectSlide = document.querySelector('.slide-' + reallyIndex);// eslint-disable-line no-unused-vars
-      // for(let i = 0 ; i < projectTit.length; i++){
-        if(projectTit2.classList.contains('active')){
-          console.log('remove');
-          projectTit.classList.remove('active');
-        }
-      // }
-      projectSlide.classList.add('active');
-      // console.log(projectTit.length);
-      // console.log(projectSlide);
-    }
+      const targetTit = document.querySelector('.slide-' + (reallyIndex + 1));// eslint-disable-line no-unused-vars
+      console.log('index : ' + index + ' : reallyIndex : ' + reallyIndex);
+      this.reallyIndex = reallyIndex;
+    },
   }
 }
 </script>
