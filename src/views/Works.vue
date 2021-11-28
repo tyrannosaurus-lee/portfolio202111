@@ -410,7 +410,7 @@ export default {
             id: 6,
             name: 'JTBC 5th Event',
             device: 'pc, mobile web',
-            period: '2021.05',
+            period: '2021',
             image: require('@/assets/img/works/bg06.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/70ZExw3p6Ex3mnllvqi5dI/d7ed50be73f8b1e90137ef4bde55543f/icon_gmb.svg',
             url: 'http://eunhye106.cafe24.com/jtbc_5th/'
@@ -419,7 +419,7 @@ export default {
             id: 7,
             name: 'JTBC 아는형님 200회 출석 체크 이벤트',
             device: 'pc, mobile web',
-            period: '2022.05',
+            period: '2019',
             image: require('@/assets/img/works/bg07.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/7dbe9pIaCBw7xeyKT9UBHK/b20f1d6baa6a8e5262da045353536330/icon_abc.svg',
             url: 'http://eunhye106.cafe24.com/event/knowingbrother/brother_mv_event.html'
@@ -427,7 +427,7 @@ export default {
             id: 8,
             name: 'JTBC beautyinside 바뀐그림찾기',
             device: 'pc, mobile web',
-            period: '2023.05',
+            period: '2019',
             image: require('@/assets/img/works/bg08.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5TT5Zse3x5p7kOv9sCuzVA/a00fddcc4649ab933128a792a2381ea4/icon_alu.svg',
             url: 'http://eunhye106.cafe24.com/event/beautyinside/beautyinside_event.html'
@@ -435,7 +435,7 @@ export default {
             id: 9,
             name: 'JTBC2',
             device: 'pc, mobile web',
-            period: '2024.05',
+            period: '2018',
             image: require('@/assets/img/works/bg09.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg',
             url: 'https://jtbc2.joins.com/'
@@ -443,7 +443,7 @@ export default {
             id: 10,
             name: 'JTBC 히든싱어 레전드 편 투표',
             device: 'pc, mobile web',
-            period: '2025.05',
+            period: '2018',
             image: require('@/assets/img/works/bg10.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ceBjjwAHT8kHuy5AE1v7p/c3457c290ce485c23ff84e2552ac736b/icon_pksha_1c.svg',
             url: 'http://eunhye106.cafe24.com/event/hiddensinger5/legend_event.html'
@@ -451,7 +451,7 @@ export default {
             id: 11,
             name: '중앙패밀리포인트',
             device: 'pc, mobile web',
-            period: '',
+            period: '2018',
             image: require('@/assets/img/works/bg11.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/5ctVSV4padnYHQNKX1UPjq/29ecb698e21a6dd6b238cad499c71432/polca_1C.svg',
             url: 'https://eunhye106.cafe24.com/family_point/family_point01.html'
@@ -459,7 +459,7 @@ export default {
             id: 12,
             name: 'JTBC 일단 뜨겁게 청소하라',
             device: 'pc, mobile web',
-            period: '',
+            period: '2018',
             image: require('@/assets/img/works/bg12.jpg'),
             icon: require('@/assets/img/works/works_icon12.png'),
             url: 'http://eunhye106.cafe24.com/event/hotclean/event.html'
@@ -467,7 +467,7 @@ export default {
             id: 13,
             name: 'JTBC Now Promotion',
             device: 'pc, mobile web',
-            period: '',
+            period: '2017',
             image: require('@/assets/img/works/bg13.jpg'),
             icon: 'https://images.ctfassets.net/hjjsa4gj5y9k/6Dfo15vhvDwwcaYRJFlkxF/3058adc4713b081d6ded6d836bbdb766/icon_zizai.svg',
             url: 'http://eunhye106.cafe24.com/jtbc_now/jtbc_now3.html'
@@ -475,7 +475,7 @@ export default {
             id: 14,
             name: 'JTBC worldwide',
             device: 'pc, mobile web',
-            period: '',
+            period: '2017',
             image: require('@/assets/img/works/bg14.jpg'),
             icon: require('@/assets/img/works/works_icon14.png'),
             url: 'http://www.jtbcworldwide.com'
@@ -483,7 +483,7 @@ export default {
             id: 15,
             name: 'JTBC Mixnine vote',
             device: 'pc, mobile web',
-            period: '',
+            period: '2017',
             image: require('@/assets/img/works/bg15.jpg'),
             icon: require('@/assets/img/works/works_icon15.png'),
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
