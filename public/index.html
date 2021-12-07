@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ko_KR">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,24 @@
     <link rel="icon" href="./favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <title>Lee eunhye</title>
+    <style>
+      .ie {position:relative; top:0; right:0; bottom:0; left:0; width:100%; height:100%;
+        background:#000; z-index:9999;}
+      .ie:after {
+        position:absolute; top:50%;
+        display:block; content:"Sorry, we do not support Internet Explorer anymore"; width:100%;
+        color:#fff; font-size:30px; text-align:center;
+      }
+      .ie #app {display:none;}
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        if (window.document.documentMode) {
+          const body = document.body;
+          body.classList.add("ie");
+        }
+      });
+    </script>
   </head>
   <body>
     <noscript>
