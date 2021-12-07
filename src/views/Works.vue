@@ -12,36 +12,34 @@
             :key="item.id"
             :class="[`project-tit slide-${index +1}`, {active : index == reallyIndex}, {prev : index == (reallyIndex - 1)}, {next : index == (reallyIndex + 1)}]"
           >
-            <!-- <div v-if="index == reallyIndex"> -->
-              <div class="visual-con">
-                <div class="visual-area">
-                  <div class="visual1"></div>
-                  <div class="visual2">
-                    <img :src="`${list[index].image}`" alt="">
-                  </div>
-                  <div class="visual3">
-                    <a :href="`${item.url}`" target="_blank">{{item.name}}
-                      <br>
-                    </a>
-                  </div>
+            <div class="visual-con">
+              <div class="visual-area">
+                <div class="visual1"></div>
+                <div class="visual2">
+                  <img :src="`${list[index].image}`" alt="">
+                </div>
+                <div class="visual3">
+                  <a :href="`${item.url}`" target="_blank">{{item.name}}
+                    <br>
+                  </a>
                 </div>
               </div>
-              <div class="project-detail">
-                <div class="slider-counter">
-                  <span class="label">No.</span>
-                  <span class="now">{{index + 1}}</span>
-                  <span class="all">{{list.length}}</span>
-                </div>
-                <div class="project-name"><p>{{item.name}}</p></div>
-                <div class="project-info">
-                  <span class="period">{{item.period}}</span>
-                  <span class="device">{{item.device}}</span>
-                </div>
-                <div class="project-shortcut">
-                  <a :href="`${item.url}`" target="_blank">View detail</a>
-                </div>
+            </div>
+            <div class="project-detail">
+              <div class="slider-counter">
+                <span class="label">No.</span>
+                <span class="now">{{index + 1}}</span>
+                <span class="all">{{list.length}}</span>
               </div>
-            <!-- </div> -->
+              <div class="project-name"><p>{{item.name}}</p></div>
+              <div class="project-info">
+                <span class="period">{{item.period}}</span>
+                <span class="device">{{item.device}}</span>
+              </div>
+              <div class="project-shortcut">
+                <a :href="`${item.url}`" target="_blank">View detail</a>
+              </div>
+            </div>
           </div>
         </div>
         <!-- //상단 갤러리 -->
