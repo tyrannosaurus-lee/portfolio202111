@@ -1,9 +1,11 @@
 <template>
   <div class="about">
     <p class="skills">
-      Vue.js, Vanilla JS, jQuery, Typescript<br>
-      Gulp, Bootstrap, SCSS, css3,<br>
-      Jira, Confluence, Gitblit, Mac OS Cross browsing, photoshop
+      Vue.js, Vanilla JS, Typescript, Gulp.js<br>
+      unit-test(Jest),  Storybook, SonarQube<br>
+      Jira, Confluence<br>
+      jQuery, Bootstrap, SCSS, css3, Github<br>
+      Mac OS Cross browsing, photoshop, Adobe XD
     </p>
     <img class="me" src="~@/assets/img/common/its_me.gif" alt="">
     <!-- 스크롤 참고 : https://www.youtube.com/watch?v=L4YtP6likYI -->
@@ -17,7 +19,7 @@
     background-size:unset;
     background-position: center;
     background-attachment: fixed;
-    .skills {padding:100px 0 300px;font-size:18px; line-height:1.5;}
+    .skills {padding:20px 0 250px;font-size:20px; line-height:1.8;}
     .me {width:360px;}
   }
 </style>
