@@ -3,9 +3,10 @@
     <p class="skills">
       Vue.js, Vanilla JS, Typescript, Gulp.js<br>
       unit-test(Jest),  Storybook, SonarQube<br>
-      Jira, Confluence<br>
-      jQuery, Bootstrap, SCSS, css3, Github<br>
-      Mac OS Cross browsing, photoshop, Adobe XD
+      Jira, Confluence, Mac OS, Yona<br>
+      Git(Bitbucket, github, gitlab)<br>
+      jQuery, Bootstrap, SCSS, css3<br>
+      Mac OS Cross browsing, photoshop, Adobe XD, Figma
     </p>
     <img class="me" src="~@/assets/img/common/its_me.gif" alt="">
     <!-- 스크롤 참고 : https://www.youtube.com/watch?v=L4YtP6likYI -->

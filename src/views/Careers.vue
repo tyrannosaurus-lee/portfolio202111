@@ -3,6 +3,7 @@
     <h2>Careers</h2>
     <div class="careers-container">
       <div class="accordion-con">
+        <!--
         <div
           class="accordion-area"
           v-for="(item, index) in list"
@@ -26,6 +27,27 @@
             {{item.content}}
           </div>
         </div>
+         -->
+        <details class="accordion-area"
+          v-for="(item, index) in list"
+          @click="openItem(item)"
+          v-bind:key="index"
+        >
+          <summary class="accordion-tit"
+            :class="{'active' : item.isActive}"
+          >
+            <div class="career-drawer_trigger">
+              <div class="career-drawer_line1"></div>
+              <div class="career-drawer_line2"></div>
+            </div>
+            {{item.title}}
+          </summary>
+          <div class="accordion-text"
+            v-on:enter="enter" v-on:leave="leave"
+          >
+            {{item.content}}
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -70,8 +92,11 @@
       &.active {
         .career-drawer_line2 {transform:rotate(0deg) scaleX(0); opacity:0;}
       }
+
     }
   &:last-child {border-bottom:1px solid rgba(0,0,0,.2);}
+  & summary::-webkit-details-marker {display:none;}
+  & summary{list-style: none;}
   }
 
 </style>
@@ -83,23 +108,34 @@ export default {
       list: [
         {
           id: 1,
+          title:'Twayair',
+          content: 'Twayair Accessibility, Twayair Payment, Twayair Plus',
+          isActive: false
+        },
+        {
+          id: 2,
           title:'JTBC & JTBC STUDIOS',
           content: 'JTBC(pc, mobile web), JTBC2, JTBC4, JTBC mediacomm, JTBC news (pc, mobile web, app:web view), Hey News, JTBC 5th, Mixnine vote, JTBC NOW promotion, JoongAng Group Family Point, JTBC2, JTBC news app newshome, Baeksangawards, Goldendisc',
           isActive: false
         },{
-          id: 2,
+          id: 3,
           title:'Hey Korean',
           content: 'Single to Mingle (web &amp; mobile web), HeyKorean, HeyKorean customer service center(flexible site)',
           isActive: false
         },{
-          id: 3,
+          id: 4,
           title:'Waplez',
           content: 'hyunjinst, blueTech Solution, bolak, SoongSil University Artificial Interlligence Laboratory, Standardmedia, CBNU IUCF, Hizen, E-journal, Danielprayer, ShinaTNC, Ahnsanggyu Honey',
           isActive: false
         },{
-          id: 4,
+          id: 5,
           title:'Cornerstone Interactive',
           content: 'T’station, ksNet, Pizzahut, Jaseng Hospital of Korean Medicine, UL Korea, Woori Asset Management, Samsung Yepp, SogangLIfeCare, Biofood',
+          isActive: false
+        },{
+          id: 6,
+          title:'Park Officetel',
+          content: 'Park Officetel, promotion event page',
           isActive: false
         }
       ]

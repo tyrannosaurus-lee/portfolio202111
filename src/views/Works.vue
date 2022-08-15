@@ -485,6 +485,14 @@ export default {
             image: require('@/assets/img/works/bg15.jpg'),
             icon: require('@/assets/img/works/works_icon15.png'),
             url: 'http://eunhye106.cafe24.com/mixnine/index.html'
+        },{
+            id: 16,
+            name: 'Twayair Accessibility',
+            device: 'pc, mobile web',
+            period: '2022.5~2022.6',
+            image: require('@/assets/img/works/bg15.jpg'),
+            icon: require('@/assets/img/works/works_icon16.png'),
+            url: 'https://www.twayair.com/app/main'
         }
       ],
       reallyIndex : 0,
